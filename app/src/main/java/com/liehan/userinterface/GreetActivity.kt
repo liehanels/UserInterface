@@ -2,6 +2,7 @@ package com.liehan.userinterface
 
 import android.os.Bundle
 import android.content.Intent
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -24,10 +25,15 @@ class GreetActivity : AppCompatActivity() {
         val intent: Intent = intent
         //here we get the name from the previous activity
         var name = intent.getStringExtra("name")
-        //here we set the name to the text view
+        //here we set the elements
         val tvGreeting = findViewById<TextView>(R.id.TvGreeting)
+        val btnBye = findViewById<Button>(R.id.BtnBye)
         //here we set the text of the text view
         tvGreeting.text = "Hello $name"
         Toast.makeText(this, name.toString(), Toast.LENGTH_LONG).show()
+        btnBye.setOnClickListener {
+            val intent = Intent(this, LastScreenActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

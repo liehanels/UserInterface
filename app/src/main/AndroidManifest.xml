@@ -13,6 +13,9 @@
         android:theme="@style/Theme.UserInterface"
         tools:targetApi="31">
         <activity
+            android:name=".LastScreenActivity"
+            android:exported="false" />
+        <activity
             android:name=".GreetActivity"
             android:exported="true" />
         <activity
